@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<AplicacaoMVCLinq.Models.Cliente>
+
+
+<h1>Clientes Inseridos:</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Nascimento</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model.OrderBy(cliente => cliente.DataNasc))
+      {
+          <tr>
+            <td>@cliente.ClienteId</td>
+            <td>@cliente.Nome</td>
+            <td>@cliente.Email</td>
+            <td>@cliente.Telefone</td>
+            <td>@cliente.DataNasc</td>
+        </tr>
+      }
+    </tbody>
+</table>
