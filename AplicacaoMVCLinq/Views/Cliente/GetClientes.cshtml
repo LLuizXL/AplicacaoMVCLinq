@@ -8,7 +8,9 @@
 
 <h1>Clientes Inseridos:</h1>
 
-<table>
+<div class="container">
+
+<table class="table table-hover table-dark table-striped-columns table-responsive">
     <thead>
         <tr>
             <th>ID</th>
@@ -21,7 +23,7 @@
 
     </thead>
     <tbody>
-        @foreach (var cliente in Model.OrderBy(cliente => cliente.DataNasc))
+        @foreach (var cliente in Model.OrderBy(cliente => cliente.Nome))
       {
           <tr>
             <td>@cliente.ClienteId</td>
@@ -33,3 +35,4 @@
       }
     </tbody>
 </table>
+</div>
